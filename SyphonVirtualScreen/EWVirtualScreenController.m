@@ -26,7 +26,7 @@
 //
 
 #import "EWVirtualScreenController.h"
-#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 @interface EWVirtualScreenController() {
     io_service_t _service;

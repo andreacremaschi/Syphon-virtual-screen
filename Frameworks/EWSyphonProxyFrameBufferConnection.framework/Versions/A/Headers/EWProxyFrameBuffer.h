@@ -40,7 +40,7 @@ typedef struct {
 } EWProxyFramebufferModeInfo;
 
 //we're matching against class name of our driver
-#define pspdriverclass "info_ennowelbers_proxyframebuffer_driver"
+#define pspdriverclass "info_ennowelbers_syphon_proxyframebuffer_driver"
 //these are used as return values in state functions
 #define FBufEnabled 1
 #define FBufDisabled 0

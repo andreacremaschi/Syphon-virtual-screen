@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>EWProxyFrameBufferConnection</string>
+	<string>EWSyphonProxyFrameBufferConnection</string>
 	<key>CFBundleIdentifier</key>
 	<string>info.ennowelbers.proxyframebuffer.connection</string>
 	<key>CFBundleInfoDictionaryVersion</key>

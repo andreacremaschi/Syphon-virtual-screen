@@ -25,15 +25,15 @@
 		CD4962CC151CA87700C398A1 /* shape_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962C9151CA87700C398A1 /* shape_green.png */; };
 		CD4962CD151CA87700C398A1 /* shape_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962CA151CA87700C398A1 /* shape_red.png */; };
 		CD4962D0151CA9D800C398A1 /* syphondevicelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962CF151CA9D800C398A1 /* syphondevicelogo.png */; };
-		CD71685A151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD716858151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework */; };
-		CD71685B151CE7590059BDB0 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD716859151CE7590059BDB0 /* Syphon.framework */; };
-		CD71685C151CE76B0059BDB0 /* EWProxyFrameBufferConnection.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD716858151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework */; };
-		CD71685D151CE76B0059BDB0 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD716859151CE7590059BDB0 /* Syphon.framework */; };
 		CD7C8CA4151B8EE600A85955 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7C8C91151B86F500A85955 /* OpenGL.framework */; };
 		CD7C8CA6151B8EE600A85955 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7F7871151B223000EEE064 /* CoreVideo.framework */; };
 		CD7C8CB0151B8EE600A85955 /* syphon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7C8C82151B70D900A85955 /* syphon_active.png */; };
 		CD7C8CB1151B8EE600A85955 /* syphon_unactive.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7C8C7F151B70C400A85955 /* syphon_unactive.png */; };
 		CD7C8CD0151BD26500A85955 /* appname.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7C8CCE151BD26400A85955 /* appname.png */; };
+		CD7CCE43151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7CCE41151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework */; };
+		CD7CCE44151DBB030061198E /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7CCE42151DBB030061198E /* Syphon.framework */; };
+		CD7CCE45151DBB240061198E /* EWSyphonProxyFrameBufferConnection.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD7CCE41151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework */; };
+		CD7CCE46151DBB240061198E /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD7CCE42151DBB030061198E /* Syphon.framework */; };
 		CDAF1A39151CE89B0074458A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAF1A38151CE89B0074458A /* Cocoa.framework */; };
 		CDAF1A3B151CE8B60074458A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAF1A3A151CE8B60074458A /* IOKit.framework */; };
 		CDAF1A3D151CEAA90074458A /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A3C151CEAA90074458A /* LaunchAtLoginController.m */; };
@@ -68,8 +68,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD71685C151CE76B0059BDB0 /* EWProxyFrameBufferConnection.framework in CopyFiles */,
-				CD71685D151CE76B0059BDB0 /* Syphon.framework in CopyFiles */,
+				CD7CCE45151DBB240061198E /* EWSyphonProxyFrameBufferConnection.framework in CopyFiles */,
+				CD7CCE46151DBB240061198E /* Syphon.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,14 +82,14 @@
 		CD4962CF151CA9D800C398A1 /* syphondevicelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syphondevicelogo.png; path = Design/syphondevicelogo.png; sourceTree = SOURCE_ROOT; };
 		CD716845151CE5220059BDB0 /* Syphon Virtual Screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Syphon Virtual Screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD71684E151CE62E0059BDB0 /* SyphonVirtualScreen-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SyphonVirtualScreen-Info.plist"; sourceTree = SOURCE_ROOT; };
-		CD716858151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EWProxyFrameBufferConnection.framework; path = EWProxyFramebuffer/EWProxyFrameBufferConnection.framework; sourceTree = SOURCE_ROOT; };
-		CD716859151CE7590059BDB0 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = EWProxyFramebuffer/Syphon.framework; sourceTree = SOURCE_ROOT; };
 		CD7C8C7E151B70C400A85955 /* Syphon Icon 32x32.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Syphon Icon 32x32.psd"; path = "Design/Syphon Icon 32x32.psd"; sourceTree = SOURCE_ROOT; };
 		CD7C8C7F151B70C400A85955 /* syphon_unactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syphon_unactive.png; path = Design/syphon_unactive.png; sourceTree = SOURCE_ROOT; };
 		CD7C8C82151B70D900A85955 /* syphon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syphon_active.png; path = Design/syphon_active.png; sourceTree = SOURCE_ROOT; };
 		CD7C8C91151B86F500A85955 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		CD7C8CC4151BCAEC00A85955 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchAtLoginController.h; path = ../SyphonVirtualScreen/LaunchAtLoginController.h; sourceTree = "<group>"; };
+		CD7C8CC4151BCAEC00A85955 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchAtLoginController.h; path = SyphonVirtualScreen/LaunchAtLoginController.h; sourceTree = "<group>"; };
 		CD7C8CCE151BD26400A85955 /* appname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appname.png; path = Design/appname.png; sourceTree = SOURCE_ROOT; };
+		CD7CCE41151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EWSyphonProxyFrameBufferConnection.framework; sourceTree = "<group>"; };
+		CD7CCE42151DBB030061198E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		CD7F785B151A3DEE00EEE064 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CD7F7871151B223000EEE064 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		CD7F7873151B231100EEE064 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -127,8 +127,8 @@
 				CDAF1A39151CE89B0074458A /* Cocoa.framework in Frameworks */,
 				CD7C8CA4151B8EE600A85955 /* OpenGL.framework in Frameworks */,
 				CD7C8CA6151B8EE600A85955 /* CoreVideo.framework in Frameworks */,
-				CD71685A151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework in Frameworks */,
-				CD71685B151CE7590059BDB0 /* Syphon.framework in Frameworks */,
+				CD7CCE43151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework in Frameworks */,
+				CD7CCE44151DBB030061198E /* Syphon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +185,16 @@
 			name = LaunchAtLogin;
 			sourceTree = "<group>";
 		};
+		CD7CCE40151DBB030061198E /* Private frameworkds */ = {
+			isa = PBXGroup;
+			children = (
+				CD7CCE41151DBB030061198E /* EWSyphonProxyFrameBufferConnection.framework */,
+				CD7CCE42151DBB030061198E /* Syphon.framework */,
+			);
+			name = "Private frameworkds";
+			path = Frameworks;
+			sourceTree = SOURCE_ROOT;
+		};
 		CD7F782E151A3D5B00EEE064 /* Syphon Virtual Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,10 +226,9 @@
 		CD7F785D151A3DF500EEE064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD7CCE40151DBB030061198E /* Private frameworkds */,
 				CDAF1A3A151CE8B60074458A /* IOKit.framework */,
 				CDAF1A38151CE89B0074458A /* Cocoa.framework */,
-				CD716858151CE7590059BDB0 /* EWProxyFrameBufferConnection.framework */,
-				CD716859151CE7590059BDB0 /* Syphon.framework */,
 				CD7C8C91151B86F500A85955 /* OpenGL.framework */,
 				CD7F7873151B231100EEE064 /* CoreMedia.framework */,
 				CD7F7871151B223000EEE064 /* CoreVideo.framework */,
@@ -442,6 +451,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/SyphonVirtualScreen\"",
 					"\"$(SRCROOT)/EWProxyFramebuffer\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -475,6 +485,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/SyphonVirtualScreen\"",
 					"\"$(SRCROOT)/EWProxyFramebuffer\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -31,7 +31,7 @@
 
 #import "NSObject+BlockObservation.h"
 
-#import <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#import <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 
 @interface AppDelegate ()
@@ -61,11 +61,18 @@
     
     _statusItem = [bar statusItemWithLength: NSSquareStatusItemLength];
     
-    //[_statusItem setTitle:@"Status"];
-    NSImage *statusImage = [NSImage imageNamed:@"shape_darkgray"];
-    [_statusItem setImage: statusImage];
-    [_statusItem setHighlightMode:YES];
-    
+    if (self.isDriverLoaded)
+    {    
+        //[_statusItem setTitle:@"Status"];
+        NSImage *statusImage = [NSImage imageNamed:@"shape_darkgray"];
+        [_statusItem setImage: statusImage];
+        [_statusItem setHighlightMode:YES];
+    }
+    else {
+        _driverStateMenuItem.title = NSLocalizedString(@"Driver not loaded.",@"");
+        NSImage *statusImage = [NSImage imageNamed:@"shape_red"];
+        [_statusItem setImage: statusImage];
+    }
     [_statusItem setMenu:menu];
         
 }
@@ -162,8 +169,6 @@
     // Driver
     // setup connection with EWProxyFramebuffer virtual device driver 
     bool result =  [virtualScreenController setupConnection];
-    if (!result)
-        _driverStateMenuItem.title = NSLocalizedString(@"Driver not loaded.",@"");
     self.isDriverLoaded = result;
 
     
