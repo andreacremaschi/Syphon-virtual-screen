@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'EWSyphonVirtualScreen' target in the 'EWSyphonVirtualScreen' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
