@@ -26,6 +26,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+
 
 typedef void(^completionBlock)(void);
 
@@ -34,6 +36,7 @@ typedef void(^completionBlock)(void);
 @property (unsafe_unretained, readonly) NSArray *profiles;
 @property (unsafe_unretained, readonly) NSArray *profileNames;
 @property (readonly) int currentMode;
+@property (readonly) unsigned char* driverBuffer;
 
 @property (readonly) bool isFramebufferActive;
 
@@ -42,5 +45,6 @@ typedef void(^completionBlock)(void);
 - (bool) setVirtualScreenEnabledWithMode: (int) mode waitUntilDone: (BOOL) waitUntilDone;
 - (void) switchToMode: (int) mode;
 - (bool) updateFramebuffer;
+- (EWProxyFramebufferModeInfo*) getCurrentModeInfo;
 
 @end

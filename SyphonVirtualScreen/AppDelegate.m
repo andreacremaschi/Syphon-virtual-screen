@@ -194,7 +194,7 @@
                 if (result)
                 {
                     // Wait a while to give CoreGraphics time to setup everything.. Workaround for a crash
-                    double delayInSeconds = 5.0;
+                    double delayInSeconds = 3.0;
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                         [self setSyphonServerEnabled: YES];
@@ -214,22 +214,10 @@
 {
     if (enabled)
     {
-        // If you're on a multi-display system and you want to capture a secondary display,
-        // you can call CGGetActiveDisplayList() to get the list of all active displays.
-        // For this example, we just specify the main display.
-        CGDirectDisplayID activeDisplays[10]; 
-        uint32_t displayCount;
-        CGGetActiveDisplayList(10,
-                               activeDisplays, &displayCount);
-        
-        
-        CGDirectDisplayID displayId = activeDisplays[displayCount-1];
-        
-       // NSLog(@"Active displays are %i\nMain display ID: %i\nActivating syphon server on display with ID: %i", displayCount, kCGDirectMainDisplay, displayId);
-
-        [screenCaptureController startCapturingDisplayID: displayId
-                                            syServerName: [[NSUserDefaults standardUserDefaults] stringForKey: @"syphonServerName"]
-                                                 context: openGLView.openGLContext ];
+    
+        [screenCaptureController startCapturingEWProxyFrameBuffer: virtualScreenController
+                                                     syServerName: [[NSUserDefaults standardUserDefaults] stringForKey: @"syphonServerName"]
+                                                          context: openGLView.openGLContext ];         
     }
     else 
         [screenCaptureController stopCapturing];
@@ -248,8 +236,6 @@
 - (IBAction)updateFramebuffer:(id)sender {
     
     [virtualScreenController updateFramebuffer];
-
-
     
 }
 

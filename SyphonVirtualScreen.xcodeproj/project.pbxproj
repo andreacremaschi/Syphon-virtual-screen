@@ -42,7 +42,6 @@
 		CDAF1A53151CEAE80074458A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAF1A4F151CEAE80074458A /* MainMenu.xib */; };
 		CDAF1A56151CEAF90074458A /* LICENSES.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDAF1A55151CEAF90074458A /* LICENSES.txt */; };
 		CDAF1A57151CEB200074458A /* NSObject+BlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A3F151CEAB60074458A /* NSObject+BlockObservation.m */; };
-		CDAF1A59151CEB250074458A /* EWCGScreenCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A43151CEAC00074458A /* EWCGScreenCaptureController.m */; };
 		CDAF1A5B151CEB2C0074458A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A47151CEACB0074458A /* AppDelegate.m */; };
 		CDAF1A5C151CEB2D0074458A /* EWVirtualScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A49151CEACB0074458A /* EWVirtualScreenController.m */; };
 		CDAF1A5D151CEB800074458A /* EWScreenCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A45151CEAC00074458A /* EWScreenCaptureController.m */; };
@@ -98,10 +97,6 @@
 		CDAF1A3C151CEAA90074458A /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchAtLoginController.m; path = SyphonVirtualScreen/LaunchAtLoginController.m; sourceTree = SOURCE_ROOT; };
 		CDAF1A3E151CEAB60074458A /* NSObject+BlockObservation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+BlockObservation.h"; path = "SyphonVirtualScreen/KVO+Block/NSObject+BlockObservation.h"; sourceTree = SOURCE_ROOT; };
 		CDAF1A3F151CEAB60074458A /* NSObject+BlockObservation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+BlockObservation.m"; path = "SyphonVirtualScreen/KVO+Block/NSObject+BlockObservation.m"; sourceTree = SOURCE_ROOT; };
-		CDAF1A40151CEAC00074458A /* EWAVFoundationScreenCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EWAVFoundationScreenCaptureController.h; path = SyphonVirtualScreen/EWAVFoundationScreenCaptureController.h; sourceTree = SOURCE_ROOT; };
-		CDAF1A41151CEAC00074458A /* EWAVFoundationScreenCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EWAVFoundationScreenCaptureController.m; path = SyphonVirtualScreen/EWAVFoundationScreenCaptureController.m; sourceTree = SOURCE_ROOT; };
-		CDAF1A42151CEAC00074458A /* EWCGScreenCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EWCGScreenCaptureController.h; path = SyphonVirtualScreen/EWCGScreenCaptureController.h; sourceTree = SOURCE_ROOT; };
-		CDAF1A43151CEAC00074458A /* EWCGScreenCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EWCGScreenCaptureController.m; path = SyphonVirtualScreen/EWCGScreenCaptureController.m; sourceTree = SOURCE_ROOT; };
 		CDAF1A44151CEAC00074458A /* EWScreenCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EWScreenCaptureController.h; path = SyphonVirtualScreen/EWScreenCaptureController.h; sourceTree = SOURCE_ROOT; };
 		CDAF1A45151CEAC00074458A /* EWScreenCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EWScreenCaptureController.m; path = SyphonVirtualScreen/EWScreenCaptureController.m; sourceTree = SOURCE_ROOT; };
 		CDAF1A46151CEACB0074458A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SyphonVirtualScreen/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -157,10 +152,6 @@
 		CD7C8C8D151B81F100A85955 /* Screen capture */ = {
 			isa = PBXGroup;
 			children = (
-				CDAF1A40151CEAC00074458A /* EWAVFoundationScreenCaptureController.h */,
-				CDAF1A41151CEAC00074458A /* EWAVFoundationScreenCaptureController.m */,
-				CDAF1A42151CEAC00074458A /* EWCGScreenCaptureController.h */,
-				CDAF1A43151CEAC00074458A /* EWCGScreenCaptureController.m */,
 				CDAF1A44151CEAC00074458A /* EWScreenCaptureController.h */,
 				CDAF1A45151CEAC00074458A /* EWScreenCaptureController.m */,
 			);
@@ -353,7 +344,6 @@
 				CDAF1A57151CEB200074458A /* NSObject+BlockObservation.m in Sources */,
 				CDAF1A5D151CEB800074458A /* EWScreenCaptureController.m in Sources */,
 				CDAF1A5B151CEB2C0074458A /* AppDelegate.m in Sources */,
-				CDAF1A59151CEB250074458A /* EWCGScreenCaptureController.m in Sources */,
 				CDAF1A5F151CEBA70074458A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,6 +48,7 @@
 				<string key="NSFrameSize">{308, 161}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:29</string>
 				<object class="NSOpenGLPixelFormat" key="NSPixelFormat">
 					<object class="NSMutableData" key="NSPixelAttributes">
@@ -109,7 +110,7 @@
 							<string key="NSFrame">{{219, 42}, {217, 18}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="929930737"/>
+							<reference key="NSNextKeyView" ref="175796842"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="74902991">
@@ -161,6 +162,7 @@
 							<string key="NSFrame">{{324, -20}, {146, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="130016712">
@@ -224,7 +226,7 @@
 							<string key="NSFrame">{{221, 164}, {160, 48}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="175796842"/>
+							<reference key="NSNextKeyView" ref="1030022907"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="233043699">
@@ -248,7 +250,7 @@
 							<string key="NSFrame">{{218, 81}, {259, 85}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="929930737"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSAntiCompressionPriority">{250, 750}</string>
 							<bool key="NSEnabled">YES</bool>
@@ -368,7 +370,7 @@
 				</array>
 			</object>
 			<object class="NSCustomObject" id="601166421">
-				<string key="NSClassName">EWCGScreenCaptureController</string>
+				<string key="NSClassName">EWScreenCaptureController</string>
 			</object>
 			<object class="NSCustomObject" id="165604049">
 				<string key="NSClassName">EWVirtualScreenController</string>
@@ -989,14 +991,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/AppDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">EWCGScreenCaptureController</string>
-					<string key="superclassName">EWScreenCaptureController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/EWCGScreenCaptureController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
