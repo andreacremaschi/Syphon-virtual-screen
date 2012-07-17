@@ -1,2 +1,16 @@
 
 SyphonVirtualScreenWorkspace.xcworkspace/xcuserdata/andreacremaschi.xcuserdatad/UserInterfaceState.xcuserstate
+
+# Mac OS X
+.DS_Store
+
+# XCode
+
+*.swp
+*~.nib
+
+*.mode1v3
+*.mode2v3
+xcuserdata
+.xcodeproj/ 
+!*.xcodeproj/project.pbxproj

@@ -27,18 +27,19 @@
 
 #import <Foundation/Foundation.h>
 
-@class SyphonServer;
+
+@class SyphonServer, EWVirtualScreenController;
 @interface EWScreenCaptureController : NSObject
 
 @property (readonly, strong) NSOpenGLContext *openGLContext;
 @property (readonly, strong) NSOpenGLPixelFormat *openGLPixelFormat;
 @property (readonly, strong) SyphonServer *syphonServer;
 @property (readonly) bool capturing;
-@property (readonly) CGDirectDisplayID displayID;
+@property (readonly) EWVirtualScreenController * virtualScreenController;
 
--(void) startCapturingDisplayID: (CGDirectDisplayID)displayId
-                   syServerName: (NSString *)syServerName
-                        context: (NSOpenGLContext *)openGLContext;
+-(void) startCapturingEWProxyFrameBuffer: (EWVirtualScreenController *)vsController
+                            syServerName: (NSString *)syServerName
+                                 context: (NSOpenGLContext *)openGLContext;
 - (void) stopCapturing;
 
 @end

@@ -26,13 +26,26 @@
 //
 
 #import "EWScreenCaptureController.h"
+#import "EWVirtualScreenController.h"
 #import <Syphon/Syphon.h>
 
+#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
+#import <OpenGL/CGLMacro.h>
 
-@interface EWScreenCaptureController ()  {
+@interface EWScreenCaptureController ()   {
     CVOpenGLTextureCacheRef _textureCache;
+    
+    bool dropNext;
+    NSRunLoop *_timerRunLoop;
+    NSThread *_timerThread;
+    
+    GLuint _textureName;
+    long _width, _height;
 }
+@property (strong) NSTimer *captureTimer;
+- (void)timerFire:(NSTimer*)theTimer;
+- (void) stopCaptureTimer;
 
 
 @property (readwrite) bool capturing;
@@ -50,6 +63,8 @@
 @synthesize openGLContext = _openGLContext, openGLPixelFormat = _openGLPixelFormat;
 @synthesize syphonServer = _syphonServer;
 @synthesize displayID = _displayID;
+@synthesize captureTimer;
+@synthesize virtualScreenController = _virtualScreenController;
 
 #pragma mark - Initialization and dealloc
 
@@ -90,38 +105,177 @@
 
 #pragma mark - To override
 
-
--(void)startCapturingDisplayID: (CGDirectDisplayID)displayId
-                  syServerName: (NSString *)syServerName
-                       context: (NSOpenGLContext *)openGLContext
+-(void)startCapturingEWProxyFrameBuffer:(EWVirtualScreenController *)vsController 
+                           syServerName:(NSString *)syServerName 
+                                context:(NSOpenGLContext *)openGLContext
 
 {
     if ([self initOpenGLContextWithSharedContext: openGLContext
-                                       error: nil])
+                                           error: nil])
     {
         // init Syphon server
         self._serverName = syServerName;
         self.syphonServer = [[SyphonServer alloc] initWithName:	 syServerName
                                                        context:	 openGLContext.CGLContextObj
                                                        options:	 nil]; 
-        self.displayID = displayId;
+        _virtualScreenController= vsController;
         self.capturing = YES;
         
     }
     
-
+    // Kick off a new Thread
+    [NSThread detachNewThreadSelector:@selector(createTimerRunLoop) 
+                             toTarget:self 
+                           withObject:nil];
 }
 
-- (void) stopCapturing
+-(void)stopCapturing    
 {
- 
+    [self stopCaptureTimer];
+    
+    CGLContextObj cgl_ctx = self.openGLContext.CGLContextObj;
+    glDeleteTextures(1, &_textureName);
+    
     [_syphonServer stop];
     self.capturing = NO;
-
+    
     _openGLContext = nil;
     _openGLPixelFormat = nil;
-    _syphonServer = nil;
+    _syphonServer = nil;    
+    
+}
 
+- (void) createTimerRunLoop
+{
+    _timerRunLoop = [NSRunLoop currentRunLoop];
+    _timerThread = [NSThread currentThread];
+    
+    [self createTimer];
+    
+    while (captureTimer && [_timerRunLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]);
+    
+}
+
+- (void) createTimer{
+    @autoreleasepool {
+        
+        dropNext=false;
+        
+        // Create a time for the thread
+        captureTimer = [NSTimer timerWithTimeInterval: 1.0/ 60.0
+                                               target: self 
+                                             selector: @selector(timerFire:)
+                                             userInfo: nil 
+                                              repeats: YES];
+        
+        // Add the timer to the run loop
+        [_timerRunLoop addTimer: captureTimer
+                        forMode: NSDefaultRunLoopMode];
+        
+        
+    }        
+}
+
+- (void) stopCaptureTimer
+{
+    @synchronized (captureTimer)
+    {
+        [captureTimer invalidate];
+        captureTimer=nil;
+    }
+}
+
+
+- (void)timerFire:(NSTimer*)theTimer
+{
+    
+    
+    if (dropNext) 
+    {
+        // NSLog(@"Drop a frame!");
+        return;   
+    }
+    @synchronized(captureTimer)
+    {
+        
+        if ((!captureTimer.isValid) )
+            return;
+        
+        @autoreleasepool {
+            dropNext=YES;
+            [self _timerTick];
+            dropNext=NO;
+            
+            //            CVOpenGLTextureCacheFlush(_textureCache, 0);
+            
+        }
+    }
+}
+
+#pragma mark - Timer tick
+
+- (void) _timerTick
+{ 
+    if ([self.syphonServer hasClients])
+    {
+        
+        if ([self.virtualScreenController updateFramebuffer])
+        {
+            void *driverBuf = (void *)self.virtualScreenController.driverBuffer;
+            
+            CGLContextObj cgl_ctx = self.openGLContext.CGLContextObj;
+            EWProxyFramebufferModeInfo *info = [self.virtualScreenController getCurrentModeInfo];
+            
+            size_t width = info->width;
+            size_t height = info->height;
+            
+            if ((width != _width) || (height != _height))
+            {
+                _width = width;
+                _height = height;
+                
+                if (_textureName)
+                    glDeleteTextures(1, &_textureName);
+                
+                // Enable Apple Client storage
+                glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
+                
+                // generate a texture and clear it
+                CGLContextObj cgl_ctx = self.openGLContext.CGLContextObj;
+                glGenTextures(1, &_textureName);
+                glEnable(GL_TEXTURE_RECTANGLE_EXT);
+                
+                // Eliminate a data copy by the OpenGL driver using the Apple texture range extension along with the rectangle texture extension
+                // This specifies an area of memory to be mapped for all the textures. It is useful for tiled or multiple textures in contiguous memory.
+                glTextureRangeAPPLE(GL_TEXTURE_RECTANGLE_EXT, width * height * 4, driverBuf);
+                
+                
+                glBindTexture(GL_TEXTURE_RECTANGLE_EXT, _textureName);
+                
+                glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 4, _width, _height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+                glBindTexture(GL_TEXTURE_RECTANGLE_EXT, 0);
+                
+
+            }
+            
+            glBindTexture(GL_TEXTURE_RECTANGLE_EXT, _textureName);
+            glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
+            glTexParameteri(GL_TEXTURE_RECTANGLE_EXT, GL_TEXTURE_STORAGE_HINT_APPLE , GL_STORAGE_CACHED_APPLE);
+            
+            glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 4, _width, _height, 0, GL_RGB, GL_UNSIGNED_BYTE, driverBuf);
+            glBindTexture(GL_TEXTURE_RECTANGLE_EXT, 0);
+
+            
+            
+            // publish our frame to our server. 
+            [self.syphonServer publishFrameTexture: _textureName
+                                     textureTarget: GL_TEXTURE_RECTANGLE_EXT
+                                       imageRegion: NSMakeRect(0,0, width, height)
+                                 textureDimensions: NSMakeSize(width, height)
+                                           flipped: YES];
+
+        }
+    }
 }
 
 

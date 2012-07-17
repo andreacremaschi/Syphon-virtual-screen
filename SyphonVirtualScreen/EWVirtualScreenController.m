@@ -37,7 +37,7 @@
 @property (readwrite, strong) NSMutableArray *_profiles;
 @property (readwrite, strong) NSMutableArray *_profileNames;
 @property (readwrite) bool isFramebufferActive;
-@property (readwrite) int currentMode;
+@property (readwrite, nonatomic) int currentMode;
 
 @end
 
@@ -73,17 +73,15 @@
     return [_profiles copy];
 }
 
--(int)currentMode
-{
-    if (!self.isFramebufferActive) return -1;    
-    return EWProxyFramebufferDriverCheckFramebufferState(_connect);
-}
-
 -(void)setCurrentMode:(int)value
 {
     currentMode = value;
 }
 
+-(unsigned char *)driverBuffer
+{
+    return _driverbuf;
+}
 #pragma mark - Connection
 - (BOOL) setupConnection
 {
@@ -249,7 +247,7 @@
     self.currentMode = mode;
     if (curStatus)
         [self setVirtualScreenEnabled: YES];
-   // NSLog( @"Virtual screen is now %@ with mode: %i", (self.isFramebufferActive ? @"ON" : @"OFF"), self.currentMode);
+    // NSLog( @"Virtual screen is now %@ with mode: %i", (self.isFramebufferActive ? @"ON" : @"OFF"), self.currentMode);
     
 }
 
@@ -259,18 +257,12 @@
 	int ret=EWProxyFramebufferDriverUpdateMemory(_connect);
 	//NSLog(@"%x",ret);
     return ret==0;
-	/*EWProxyFramebufferModeInfo *info=[self getCurrentModeInfo];
-	//copy into nsdata object
-	NSData *image=[[NSData alloc] initWithBytes:driverbuf length:info->width*info->height*3];
-	//encapsulate into cg data provider
-	CGDataProviderRef dataprovider=CGDataProviderCreateWithCFData((CFDataRef)image);
-	//create cg image from provider
-	CGImageRef cgimg=CGImageCreate(info->width, info->height, 8, 24, info->width*3, CGColorSpaceCreateDeviceRGB(), 0, dataprovider, NULL, NO, kCGRenderingIntentDefault);
-	//create bitmapimagerepresentation
-	NSBitmapImageRep *rep=[[NSBitmapImageRep alloc] initWithCGImage:cgimg];
-	//and stuff it into an nsimage
-	NSImage *img=[[NSImage alloc] init];
-	[img addRepresentation:rep];
-	[imgView setImage:img];*/
 }
+
+- (EWProxyFramebufferModeInfo*) getCurrentModeInfo
+{
+	NSData *data=[_profiles objectAtIndex: currentMode -1];
+	return (EWProxyFramebufferModeInfo*)[data bytes];
+}
+
 @end
