@@ -102,9 +102,9 @@ void info_ennowelbers_syphon_proxyframebuffer_driver::initFB()
 		//lookahead: there is a framebuffer->thisclassuserclient->userspace path to get the screen capture
 		//but the framebuffer memory is not a valid image (it contains more than the normal raw image data)
 		//therefore we init a buffer to copy the image into. However, we're getting 
-		//a memory footprint of twice maxresolution*3, or at least near that scale 
+		//a memory footprint of twice maxresolution*4, or at least near that scale 
 		//(i assume it's even worse, actually... just keep reading my comments)
-		unsigned int size=getMaxWidth()*getMaxHeight()*3;
+		unsigned int size=getMaxWidth()*getMaxHeight()*4;
 		buffer=IOBufferMemoryDescriptor::withCapacity(size, kIODirectionInOut);
 		//IOLog("buffer=%d\n",buffer);
 		
@@ -278,7 +278,7 @@ IOReturn info_ennowelbers_syphon_proxyframebuffer_driver::UpdateMemory()
         
         //target memory
 		IOMemoryMap *bmap=buffer->map(kIOMapAnywhere);
-		unsigned char *destWalk=(unsigned char*)bmap->getVirtualAddress();
+		unsigned int *destWalk=(unsigned int*)bmap->getVirtualAddress();
         
 		//assumption 1: the system just wants some memory to play with, data start at 0
 		//assumption 2: each row has 32 byte ahead
@@ -293,14 +293,9 @@ IOReturn info_ennowelbers_syphon_proxyframebuffer_driver::UpdateMemory()
 		{
 			for(int x=0;x<information.nominalWidth;x++)
 			{
-				*destWalk=((*buf)&0xFF0000)>>16;//R
-				destWalk++;
-				*destWalk=((*buf)&0xFF00)>>8;//G
-				destWalk++;
-				*destWalk=(*buf)&0xFF;//B
-				destWalk++;
-				buf++;
-				
+                *destWalk = *buf; // copy BGRA (assume A is is always set to 0xFF)
+                destWalk++;
+                buf++;
 			}
 			buf+=8;
 		}

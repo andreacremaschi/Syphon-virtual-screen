@@ -79,14 +79,6 @@
 		(NSOpenGLPixelFormatAttribute) 0
 	};
     
-    /*NSOpenGLPixelFormatAttribute    attributes[] = {
-        NSOpenGLPFAPixelBuffer,
-        NSOpenGLPFANoRecovery,
-        NSOpenGLPFAAccelerated,
-        NSOpenGLPFADepthSize, 32,
-        (NSOpenGLPixelFormatAttribute) 0
-    };*/
-    
 	NSOpenGLPixelFormat*	newPixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes:attributes] ;
     
 	NSOpenGLContext *newOpenGLContext = [[NSOpenGLContext alloc] initWithFormat: newPixelFormat 
@@ -205,9 +197,7 @@
             dropNext=YES;
             [self _timerTick];
             dropNext=NO;
-            
-            //            CVOpenGLTextureCacheFlush(_textureCache, 0);
-            
+                        
         }
     }
 }
@@ -251,8 +241,7 @@
                 
                 
                 glBindTexture(GL_TEXTURE_RECTANGLE_EXT, _textureName);
-                
-                glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 4, _width, _height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+                glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA8, _width, _height, 0, GL_BGRA, GL_UNSIGNED_INT_8_8_8_8_REV, NULL);   
                 glBindTexture(GL_TEXTURE_RECTANGLE_EXT, 0);
                 
 
@@ -262,7 +251,7 @@
             glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
             glTexParameteri(GL_TEXTURE_RECTANGLE_EXT, GL_TEXTURE_STORAGE_HINT_APPLE , GL_STORAGE_CACHED_APPLE);
             
-            glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 4, _width, _height, 0, GL_RGB, GL_UNSIGNED_BYTE, driverBuf);
+            glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA8, _width, _height, 0, GL_BGRA, GL_UNSIGNED_INT_8_8_8_8_REV, driverBuf);
             glBindTexture(GL_TEXTURE_RECTANGLE_EXT, 0);
 
             

@@ -34,7 +34,7 @@
 	//encapsulate into cg data provider
 	CGDataProviderRef dataprovider=CGDataProviderCreateWithCFData((CFDataRef)image);
 	//create cg image from provider
-	CGImageRef cgimg=CGImageCreate(info->width, info->height, 8, 24, info->width*3, CGColorSpaceCreateDeviceRGB(), 0, dataprovider, NULL, NO, kCGRenderingIntentDefault);
+	CGImageRef cgimg=CGImageCreate(info->width, info->height, 8, 32, info->width*4, CGColorSpaceCreateDeviceRGB(), (kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host), dataprovider, NULL, NO, kCGRenderingIntentDefault);
 	//create bitmapimagerepresentation
 	NSBitmapImageRep *rep=[[NSBitmapImageRep alloc] initWithCGImage:cgimg];
 	//and stuff it into an nsimage
