@@ -8,7 +8,7 @@ The framebuffer it draws on is developed by Enno Welbers (here on GitHub: https:
 Installing
 ----------
 
-[Download the trunk][dl], then, update the submodule:
+Download the master branch, then, update the submodule:
 
       git submodule update --init
 
