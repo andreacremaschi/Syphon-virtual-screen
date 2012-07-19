@@ -29,7 +29,7 @@
 #import "EWVirtualScreenController.h"
 #import <Syphon/Syphon.h>
 
-#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 #import <OpenGL/CGLMacro.h>
 
@@ -249,9 +249,12 @@
             
             glBindTexture(GL_TEXTURE_RECTANGLE_EXT, _textureName);
             glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
+            glPixelStorei(GL_UNPACK_ROW_LENGTH, _width+8);
             glTexParameteri(GL_TEXTURE_RECTANGLE_EXT, GL_TEXTURE_STORAGE_HINT_APPLE , GL_STORAGE_CACHED_APPLE);
             
             glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA8, _width, _height, 0, GL_BGRA, GL_UNSIGNED_INT_8_8_8_8_REV, driverBuf);
+
+            glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);            
             glBindTexture(GL_TEXTURE_RECTANGLE_EXT, 0);
 
             

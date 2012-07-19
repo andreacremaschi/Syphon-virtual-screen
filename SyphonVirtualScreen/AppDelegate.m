@@ -31,7 +31,7 @@
 
 #import "NSObject+BlockObservation.h"
 
-#import <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#import <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 
 @interface AppDelegate ()

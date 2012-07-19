@@ -26,7 +26,7 @@
 //
 
 #import "EWVirtualScreenController.h"
-#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 @interface EWVirtualScreenController() {
     io_service_t _service;
@@ -143,7 +143,7 @@
         //NSLog( @"Trying to disable virtual screen");
 
 		//framebuffer is on, disable it. unmap framebuffer and disable it.
-		EWProxyFramebufferDriverUnmapFramebuffer(_connect, _driverbuf);
+		EWProxyFramebufferDriverUnmapRawFramebuffer(_connect, _driverbuf);
 		EWProxyFramebufferDriverDisableFramebuffer(_connect);
         self.isFramebufferActive=NO;
         mode=0;
@@ -164,7 +164,7 @@
 
 		//map memory
 		unsigned int size;
-		_driverbuf=EWProxyFramebufferDriverMapFramebuffer(_connect, &size);
+		_driverbuf=EWProxyFramebufferDriverMapRawFramebuffer(_connect, &size);
         self.isFramebufferActive=YES;
         
 	}
@@ -254,9 +254,9 @@
 - (bool)updateFramebuffer
 {
     //tell driver to update buffer mapped to client memory
-	int ret=EWProxyFramebufferDriverUpdateMemory(_connect);
+	// int ret=EWProxyFramebufferDriverUpdateMemory(_connect); // No need for this, since we're using the "raw" framebuffer (i.e. directly accessing to the kernel memory)
 	//NSLog(@"%x",ret);
-    return ret==0;
+    return YES; //ret==0;
 }
 
 - (EWProxyFramebufferModeInfo*) getCurrentModeInfo

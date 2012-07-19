@@ -26,7 +26,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <EWSyphonProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
 
 
 typedef void(^completionBlock)(void);
@@ -35,7 +35,7 @@ typedef void(^completionBlock)(void);
 
 @property (unsafe_unretained, readonly) NSArray *profiles;
 @property (unsafe_unretained, readonly) NSArray *profileNames;
-@property (readonly) int currentMode;
+@property (readonly, nonatomic) int currentMode;
 @property (readonly) unsigned char* driverBuffer;
 
 @property (readonly) bool isFramebufferActive;
