@@ -217,7 +217,7 @@
     
         [screenCaptureController startCapturingEWProxyFrameBuffer: virtualScreenController
                                                      syServerName: [[NSUserDefaults standardUserDefaults] stringForKey: @"syphonServerName"]
-                                                          context: openGLView.openGLContext ];         
+                                                          context: nil]; //openGLView.openGLContext ];         
     }
     else 
         [screenCaptureController stopCapturing];

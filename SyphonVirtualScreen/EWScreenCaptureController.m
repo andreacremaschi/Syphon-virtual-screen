@@ -71,11 +71,11 @@
 - (bool)initOpenGLContextWithSharedContext: (NSOpenGLContext*)sharedContext error: (NSError **)error {
     
     NSOpenGLPixelFormatAttribute	attributes[] = {
-		NSOpenGLPFAPixelBuffer,
+		// NSOpenGLPFAPixelBuffer,
 		//NSOpenGLPFANoRecovery,
 		//kCGLPFADoubleBuffer,
 		//NSOpenGLPFAAccelerated,
-		NSOpenGLPFADepthSize, 32,
+		 NSOpenGLPFADepthSize, 32,
 		(NSOpenGLPixelFormatAttribute) 0
 	};
     
@@ -108,7 +108,7 @@
         // init Syphon server
         self._serverName = syServerName;
         self.syphonServer = [[SyphonServer alloc] initWithName:	 syServerName
-                                                       context:	 openGLContext.CGLContextObj
+                                                       context:	 self.openGLContext.CGLContextObj
                                                        options:	 nil]; 
         _virtualScreenController= vsController;
         self.capturing = YES;
