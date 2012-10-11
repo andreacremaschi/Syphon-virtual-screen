@@ -19,3 +19,8 @@ The project will compile in two products:
 - Syphon Virtual Screen.app - this is the client application. Just copy it in /Applications and launch (after installing the kext and reboot)
 
 
+Binary
+----------
+
+1. Download the installer here: https://rapidshare.com/files/3975409114/SyphonVirtualScreen.pkg
+2. Replace Syphon Virtual Screen in Applications folder with this version of the app: https://rapidshare.com/files/2519041396/SVS%20(app%20only).zip
