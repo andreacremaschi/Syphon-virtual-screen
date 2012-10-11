@@ -79,13 +79,6 @@
 			remoteGlobalIDString = 96614E0510E930720066624E;
 			remoteInfo = EWProxyframeBufferApp;
 		};
-		CDFB76AA15B83BF0009844B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDFB769D15B83BE9009844B9 /* EWProxyFrameBuffer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 96614DA710E92DB70066624E;
-			remoteInfo = EWProxyFrameBufferConnection;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -321,7 +314,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CDFB76AB15B83BF0009844B9 /* PBXTargetDependency */,
 			);
 			name = "Syphon Virtual Screen (Snow Leopard)";
 			productName = EWSyphonVirtualScreen;
@@ -428,11 +420,6 @@
 			isa = PBXTargetDependency;
 			target = CD7C8C97151B8EE600A85955 /* Syphon Virtual Screen (Snow Leopard) */;
 			targetProxy = CD7C8CD1151BD62900A85955 /* PBXContainerItemProxy */;
-		};
-		CDFB76AB15B83BF0009844B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EWProxyFrameBufferConnection;
-			targetProxy = CDFB76AA15B83BF0009844B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
