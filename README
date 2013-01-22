@@ -25,3 +25,46 @@ As an alternative to compiling from source, you can just download the latest ver
 
 1. Download the installer here: https://rapidshare.com/files/3975409114/SyphonVirtualScreen.pkg
 2. Replace Syphon Virtual Screen in Applications folder with this version of the app: https://rapidshare.com/files/2519041396/SVS%20(app%20only).zip
+
+
+
+Using custom resolutions
+----------
+To use different resolutions you can just modify the EWSyphonProxyFramebuffer/info.plist. 
+You can do it:
+- before compiling the kext
+- downloading the binary and editing the kext configuration. Here is how:
+
+
+- open the Terminal
+- type “sudo su”, enter, type your password
+- type “cd /System/Library/Extensions/EWSyphonProxyFramebuffer.kext/Contents/”
+- type “nano Info.plist”
+- search this section:
+MaxResolution
+
+height
+1024
+width
+1280
+
+and replace max height and width as you need to
+
+- a little above this section you’ll find a list of available resolutions. Add yours:
+
+height
+2048
+name
+2048×768
+width
+768
+
+- type “Ctrl+X” to save your editing
+
+- now, back in terminal, you have to repair permissions for the driver you’ve just modified. Type:
+“sudo chmod -R 755 /System/Library/Extensions/EWSyphonProxyFramebuffer.kext”
+“sudo chown -R root:wheel /System/Library/Extensions/EWSyphonProxyFramebuffer.kext”
+
+- delete the kext cache (“rmdir -R /System/Library/Caches/com.apple.kext.caches/Startup”);
+
+- reboot
