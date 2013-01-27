@@ -22,13 +22,10 @@ The project will compile in two products:
 Binary
 ----------
 As an alternative to compiling from source, you can just download the latest version from here:
+https://dl.dropbox.com/u/2764054/SVS.zip
 
-1. Download the installer here: 
-https://rapidshare.com/files/3975409114/SyphonVirtualScreen.pkg
-
-2. Replace Syphon Virtual Screen in Applications folder with this version of the app: 
-https://rapidshare.com/files/2519041396/SVS%20(app%20only).zip
-
+This includes an installer and an alterante version of the client application.
+Pleas install the package first, then replace the "Syphon Virtual Screen" application in /Applications folder with the one provided in the .zip file.
 
 Using custom resolutions
 ----------
