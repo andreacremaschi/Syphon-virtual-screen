@@ -9,11 +9,11 @@ The framebuffer it draws on is developed by Enno Welbers (thanks Enno!). It resi
 
 ## Installing
 
-## From source
+### From source
 
 Download the master branch, then, update the submodule:
 
-      `git submodule update --init`
+      git submodule update --init
 
 The project will compile in two products: 
 
@@ -22,14 +22,14 @@ The project will compile in two products:
 - Syphon Virtual Screen.app - this is the client application. Just copy it in /Applications and launch (after installing the kext and reboot)
 
 
-## Binary
+### Binary
 
 As an alternative to compiling from source, you can just download the latest version from [this link](https://dl.dropbox.com/u/2764054/SVS.zip).
 
 This includes an installer and an alternate version of the client application.
 Pleas install the package first, then replace the "Syphon Virtual Screen" application in /Applications folder with the one provided in the .zip file.
 
-# Using custom resolutions
+## Using custom resolutions
 
 To use different resolutions you can just modify the EWSyphonProxyFramebuffer/info.plist. 
 You can do it:
@@ -38,31 +38,31 @@ You can do it:
 
 
 - open the Terminal
-- type “sudo su”, enter, type your password
-- type “cd /System/Library/Extensions/EWSyphonProxyFramebuffer.kext/Contents/”
-- type “nano Info.plist”
+- type `sudo su`, enter, type your password
+- type `cd /System/Library/Extensions/EWSyphonProxyFramebuffer.kext/Contents/`
+- type `nano Info.plist`
 - search this section:
 
-`MaxResolution
+    MaxResolution
 
-height	1024
-width	1280
-`
+    height	1024
+    width	1280
+
 
 and replace max height and width as you need to
 
 - a little above this section you’ll find a list of available resolutions. Add yours:
 
-`height	2048
-name	2048×768
-width	768
-`
+    height	2048
+    name	2048×768
+    width	768
+
 
 - type “Ctrl+X” to save your editing
 
 - now, back in terminal, you have to repair permissions for the driver you’ve just modified. Type:
-“sudo chmod -R 755 /System/Library/Extensions/EWSyphonProxyFramebuffer.kext”
-“sudo chown -R root:wheel /System/Library/Extensions/EWSyphonProxyFramebuffer.kext”
+`sudo chmod -R 755 /System/Library/Extensions/EWSyphonProxyFramebuffer.kext`
+`sudo chown -R root:wheel /System/Library/Extensions/EWSyphonProxyFramebuffer.kext`
 
 - delete the kext cache (“rmdir -R /System/Library/Caches/com.apple.kext.caches/Startup”);
 
