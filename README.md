@@ -39,7 +39,7 @@ You can do it:
 
 - open the Terminal
 - type `sudo su`, enter, type your password
-- type `cd /System/Library/Extensions/EWSyphonProxyFramebuffer.kext/Contents/`
+- type `cd /System/Library/Extensions/EWProxyFramebuffer.kext/Contents/`
 - type `nano Info.plist`
 - search this section:
 
@@ -61,9 +61,9 @@ and replace max height and width as you need to
 - type “Ctrl+X” to save your editing
 
 - now, back in terminal, you have to repair permissions for the driver you’ve just modified. Type:
-`sudo chmod -R 755 /System/Library/Extensions/EWSyphonProxyFramebuffer.kext`
-`sudo chown -R root:wheel /System/Library/Extensions/EWSyphonProxyFramebuffer.kext`
+`sudo chmod -R 755 /System/Library/Extensions/EWProxyFramebuffer.kext`
+`sudo chown -R root:wheel /System/Library/Extensions/EWProxyFramebuffer.kext`
 
-- delete the kext cache (“rmdir -R /System/Library/Caches/com.apple.kext.caches/Startup”);
+- delete the kext cache (“rm -R /System/Library/Caches/com.apple.kext.caches/Startup”);
 
 - reboot
