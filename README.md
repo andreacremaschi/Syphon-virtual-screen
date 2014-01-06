@@ -24,7 +24,7 @@ The project will compile in two products:
 
 ### Binary
 
-As an alternative to compiling from source, you can just download the latest version from [this link](https://dl.dropbox.com/u/2764054/SVS.zip).
+As an alternative to compiling from source, you can just download the latest version from [this link](https://dl.dropboxusercontent.com/u/2764054/SVS.zip).
 
 This includes an installer and an alternate version of the client application.
 Pleas install the package first, then replace the "Syphon Virtual Screen" application in /Applications folder with the one provided in the .zip file.
