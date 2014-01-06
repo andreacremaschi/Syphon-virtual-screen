@@ -1,3 +1,6 @@
 [submodule "Frameworks/EWProxyFramebuffer"]
 	path = Frameworks/EWProxyFramebuffer
 	url = git://github.com/andreacremaschi/EWProxyFramebuffer.git
+[submodule "EWProxyFramebuffer"]
+	path = EWProxyFramebuffer
+	url = https://github.com/andreacremaschi/EWProxyFramebuffer.git

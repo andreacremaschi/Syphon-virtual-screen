@@ -26,7 +26,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWProxyFrameBuffer/EWProxyFrameBuffer.h>
 
 
 typedef void(^completionBlock)(void);

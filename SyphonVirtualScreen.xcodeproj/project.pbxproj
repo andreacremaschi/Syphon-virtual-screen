@@ -6,25 +6,12 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		96614E9C10E93A820066624E /* All */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 96614EB110E93AC50066624E /* Build configuration list for PBXAggregateTarget "All" */;
-			buildPhases = (
-			);
-			dependencies = (
-				CD7C8CD2151BD62900A85955 /* PBXTargetDependency */,
-			);
-			name = All;
-			productName = All;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		CD4962CB151CA87700C398A1 /* shape_darkgray.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962C8151CA87700C398A1 /* shape_darkgray.png */; };
 		CD4962CC151CA87700C398A1 /* shape_green.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962C9151CA87700C398A1 /* shape_green.png */; };
 		CD4962CD151CA87700C398A1 /* shape_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962CA151CA87700C398A1 /* shape_red.png */; };
 		CD4962D0151CA9D800C398A1 /* syphondevicelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4962CF151CA9D800C398A1 /* syphondevicelogo.png */; };
+		CD6D3932187B1C8E0098BEB9 /* EWProxyFrameBufferConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6D392D187B1C6D0098BEB9 /* EWProxyFrameBufferConnection.framework */; };
 		CD7C8CA4151B8EE600A85955 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7C8C91151B86F500A85955 /* OpenGL.framework */; };
 		CD7C8CA6151B8EE600A85955 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7F7871151B223000EEE064 /* CoreVideo.framework */; };
 		CD7C8CB0151B8EE600A85955 /* syphon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7C8C82151B70D900A85955 /* syphon_active.png */; };
@@ -44,19 +31,38 @@
 		CDAF1A5D151CEB800074458A /* EWScreenCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A45151CEAC00074458A /* EWScreenCaptureController.m */; };
 		CDAF1A5F151CEBA70074458A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF1A5E151CEBA70074458A /* main.m */; };
 		CDAF1A63151CECD70074458A /* applogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDAF1A62151CECD70074458A /* applogo.icns */; };
-		CDAF1A65151CECF30074458A /* applogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDAF1A64151CECF30074458A /* applogo.icns */; };
 		CDFB76AC15B83C05009844B9 /* EWProxyFrameBufferConnection.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDFB76A715B83BE9009844B9 /* EWProxyFrameBufferConnection.framework */; };
-		CDFB76AD15B83C4E009844B9 /* EWProxyFrameBufferConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFB76A715B83BE9009844B9 /* EWProxyFrameBufferConnection.framework */; };
 		CDFB76AE15B83C57009844B9 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFB769B15B83BDC009844B9 /* Syphon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD7C8CD1151BD62900A85955 /* PBXContainerItemProxy */ = {
+		CD6D392A187B1C6D0098BEB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			containerPortal = CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 32D94FD00562CBF700B6AF17;
+			remoteInfo = EWProxyFrameBuffer;
+		};
+		CD6D392C187B1C6D0098BEB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96614DA810E92DB70066624E;
+			remoteInfo = EWProxyFrameBufferConnection;
+		};
+		CD6D392E187B1C6D0098BEB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96614E0510E930720066624E;
+			remoteInfo = EWProxyframeBufferApp;
+		};
+		CD6D3930187B1C7A0098BEB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = CD7C8C97151B8EE600A85955;
-			remoteInfo = "Syphon Virtual Screen (Snow Leopard)";
+			remoteGlobalIDString = 96614DA710E92DB70066624E;
+			remoteInfo = EWProxyFrameBufferConnection;
 		};
 		CDFB76A415B83BE9009844B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -100,6 +106,7 @@
 		CD4962C9151CA87700C398A1 /* shape_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shape_green.png; path = Design/shape_green.png; sourceTree = SOURCE_ROOT; };
 		CD4962CA151CA87700C398A1 /* shape_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shape_red.png; path = Design/shape_red.png; sourceTree = SOURCE_ROOT; };
 		CD4962CF151CA9D800C398A1 /* syphondevicelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syphondevicelogo.png; path = Design/syphondevicelogo.png; sourceTree = SOURCE_ROOT; };
+		CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EWProxyFrameBuffer.xcodeproj; path = EWProxyFramebuffer/EWProxyFrameBuffer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CD716845151CE5220059BDB0 /* Syphon Virtual Screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Syphon Virtual Screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD71684E151CE62E0059BDB0 /* SyphonVirtualScreen-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SyphonVirtualScreen-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CD7C8C7E151B70C400A85955 /* Syphon Icon 32x32.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Syphon Icon 32x32.psd"; path = "Design/Syphon Icon 32x32.psd"; sourceTree = SOURCE_ROOT; };
@@ -141,10 +148,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6D3932187B1C8E0098BEB9 /* EWProxyFrameBufferConnection.framework in Frameworks */,
 				CDAF1A3B151CE8B60074458A /* IOKit.framework in Frameworks */,
 				CDAF1A39151CE89B0074458A /* Cocoa.framework in Frameworks */,
 				CD7C8CA4151B8EE600A85955 /* OpenGL.framework in Frameworks */,
-				CDFB76AD15B83C4E009844B9 /* EWProxyFrameBufferConnection.framework in Frameworks */,
 				CD7C8CA6151B8EE600A85955 /* CoreVideo.framework in Frameworks */,
 				CDFB76AE15B83C57009844B9 /* Syphon.framework in Frameworks */,
 			);
@@ -162,6 +169,16 @@
 				CD716846151CE5220059BDB0 /* Products */,
 			);
 			name = EWProxyFrameBuffer;
+			sourceTree = "<group>";
+		};
+		CD6D3924187B1C690098BEB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD6D392B187B1C6D0098BEB9 /* EWProxyFrameBuffer.kext */,
+				CD6D392D187B1C6D0098BEB9 /* EWProxyFrameBufferConnection.framework */,
+				CD6D392F187B1C6D0098BEB9 /* EWProxyframeBufferApp.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CD716846151CE5220059BDB0 /* Products */ = {
@@ -220,6 +237,7 @@
 				CDAF1A49151CEACB0074458A /* EWVirtualScreenController.m */,
 				CD7F782F151A3D5B00EEE064 /* Supporting Files */,
 				CD7F7867151A414500EEE064 /* Resources */,
+				CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */,
 			);
 			name = "Syphon Virtual Screen";
 			path = EWSyphonVirtualScreen;
@@ -314,6 +332,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CD6D3931187B1C7A0098BEB9 /* PBXTargetDependency */,
 			);
 			name = "Syphon Virtual Screen (Snow Leopard)";
 			productName = EWSyphonVirtualScreen;
@@ -326,7 +345,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB91DD08733DB10010E9CD /* Build configuration list for PBXProject "SyphonVirtualScreen" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -340,19 +359,43 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = CD6D3924187B1C690098BEB9 /* Products */;
+					ProjectRef = CD6D3923187B1C690098BEB9 /* EWProxyFrameBuffer.xcodeproj */;
+				},
+				{
 					ProductGroup = CDFB769E15B83BE9009844B9 /* Products */;
 					ProjectRef = CDFB769D15B83BE9009844B9 /* EWProxyFrameBuffer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				96614E9C10E93A820066624E /* All */,
 				CD7C8C97151B8EE600A85955 /* Syphon Virtual Screen (Snow Leopard) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		CD6D392B187B1C6D0098BEB9 /* EWProxyFrameBuffer.kext */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EWProxyFrameBuffer.kext;
+			remoteRef = CD6D392A187B1C6D0098BEB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD6D392D187B1C6D0098BEB9 /* EWProxyFrameBufferConnection.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EWProxyFrameBufferConnection.framework;
+			remoteRef = CD6D392C187B1C6D0098BEB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD6D392F187B1C6D0098BEB9 /* EWProxyframeBufferApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = EWProxyframeBufferApp.app;
+			remoteRef = CD6D392E187B1C6D0098BEB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CDFB76A515B83BE9009844B9 /* EWProxyFrameBuffer.kext */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -393,7 +436,6 @@
 				CDAF1A53151CEAE80074458A /* MainMenu.xib in Resources */,
 				CDAF1A56151CEAF90074458A /* LICENSES.txt in Resources */,
 				CDAF1A63151CECD70074458A /* applogo.icns in Resources */,
-				CDAF1A65151CECF30074458A /* applogo.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,10 +458,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CD7C8CD2151BD62900A85955 /* PBXTargetDependency */ = {
+		CD6D3931187B1C7A0098BEB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD7C8C97151B8EE600A85955 /* Syphon Virtual Screen (Snow Leopard) */;
-			targetProxy = CD7C8CD1151BD62900A85955 /* PBXContainerItemProxy */;
+			name = EWProxyFrameBufferConnection;
+			targetProxy = CD6D3930187B1C7A0098BEB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,7 +496,6 @@
 		1DEB91DE08733DB10010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -467,7 +508,6 @@
 		1DEB91DF08733DB10010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -475,32 +515,12 @@
 			};
 			name = Release;
 		};
-		96614E9D10E93A820066624E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = All;
-			};
-			name = Debug;
-		};
-		96614E9E10E93A820066624E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = All;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		CD7C8CB3151B8EE600A85955 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,8 +540,13 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}",
+				);
 				INFOPLIST_FILE = "SyphonVirtualScreen-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Syphon Virtual Screen";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -532,8 +557,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -548,8 +573,13 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}",
+				);
 				INFOPLIST_FILE = "SyphonVirtualScreen-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Syphon Virtual Screen";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -564,15 +594,6 @@
 			buildConfigurations = (
 				1DEB91DE08733DB10010E9CD /* Debug */,
 				1DEB91DF08733DB10010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		96614EB110E93AC50066624E /* Build configuration list for PBXAggregateTarget "All" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96614E9D10E93A820066624E /* Debug */,
-				96614E9E10E93A820066624E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

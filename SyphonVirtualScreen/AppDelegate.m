@@ -31,7 +31,7 @@
 
 #import "NSObject+BlockObservation.h"
 
-#import <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#import <EWProxyFrameBuffer/EWProxyFrameBuffer.h>
 
 
 @interface AppDelegate ()
@@ -81,6 +81,7 @@
 {
     NSMenuItem __unsafe_unretained *menuItem = _driverStateMenuItem;
     NSMenu __unsafe_unretained *menuCopy = menu;
+    EWVirtualScreenController __weak *vsController = virtualScreenController;
     [virtualScreenController addObserverForKeyPath:@"isFramebufferActive"
                                               task:^(id obj, NSDictionary *change) {
                                                   if ([[change objectForKey: @"new"] boolValue])
@@ -97,13 +98,13 @@
                                                       [menuTitle setEnabled:NO];
                                                       [menuCopy insertItem: menuTitle atIndex:3];
                                                       
-                                                      for (NSString * mode in virtualScreenController.profileNames)
+                                                      for (NSString * mode in vsController.profileNames)
                                                       {
                                                           NSMenuItem *newMenuItem = [[NSMenuItem alloc] initWithTitle: mode
                                                                                                                action: @selector(changeMode:) 
                                                                                                         keyEquivalent: @""];
                                                           newMenuItem.tag = i;
-                                                          if (i==virtualScreenController.currentMode)
+                                                          if (i==vsController.currentMode)
                                                               newMenuItem.state=NSOnState;    
                                                           [menuCopy insertItem: newMenuItem atIndex:3+i];
                                                           i++;

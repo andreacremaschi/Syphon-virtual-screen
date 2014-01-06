@@ -29,7 +29,7 @@
 #import "EWVirtualScreenController.h"
 #import <Syphon/Syphon.h>
 
-#include <EWProxyFrameBufferConnection/EWProxyFrameBuffer.h>
+#include <EWProxyFrameBuffer/EWProxyFrameBuffer.h>
 
 #import <OpenGL/CGLMacro.h>
 
