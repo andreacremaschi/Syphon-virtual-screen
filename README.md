@@ -9,9 +9,14 @@ The framebuffer it draws on is developed by Enno Welbers (thanks Enno!). It resi
 
 ## Installing
 
+### Binary
+
+As an alternative to compiling from source, you can just download the latest version from the [releases](https://github.com/andreacremaschi/Syphon-virtual-screen/releases) section of the project. The package installer will install both the kext and the client app. After rebooting you can find Syphon Virtual Screen in /Applications. Automatic launch at login is disabled by default, but you can find an option to enable it in the application's preference panel.
+
+
 ### From source
 
-Download the master branch, then, update the submodule:
+Download the master branch, then update the submodule:
 
       git submodule update --init
 
@@ -22,17 +27,11 @@ The project will compile in two products:
 - Syphon Virtual Screen.app - this is the client application. Just copy it in /Applications and launch (after installing the kext and reboot)
 
 
-### Binary
-
-As an alternative to compiling from source, you can just download the latest version from [this link](https://dl.dropboxusercontent.com/u/2764054/SVS.zip).
-
 
 ## Using custom resolutions
 
 To use different resolutions you can just modify the EWSyphonProxyFramebuffer/info.plist. 
-You can do it:
-- before compiling the kext
-- downloading the binary and editing the kext configuration. Here is how:
+You can do it both before compiling the kext or downloading the binary and editing the kext configuration. Here is how:
 
 
 - open the Terminal
