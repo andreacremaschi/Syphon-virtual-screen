@@ -2,9 +2,9 @@
 
 Based on bangnoise/vade's [Syphon](http://syphon.v002.info) framework and Enno Welber's [EWProxyFrameBuffer](https://github.com/mkernel/EWProxyFramebuffer).
 
-Syphon Virtual screen is a tool to share video output in applications that can go full-screen but are not yet Syphon-enabled (I use it with [QLab](http://figure53.com/qlab/), waiting for Qlab 3!)
+Syphon Virtual screen is a tool to share video output in applications that can go full-screen but are not yet Syphon-enabled
 
-The framebuffer it draws on is developed by Enno Welbers (thanks Enno!). It resides in CPU memory, so maybe it could not be the best solution for heavy video processing: every frame has to be uploaded to the GPU RAM to be published on a syphon server, and this is a (relatively) slow operation. The best would be having native Syphon support in the application you target of course, but if you're here it means you can't go that way.. But still it can be helpful to hijack an application video output that is not Syphon-enabled. As for now, this is the only solution with QLab, while we wait for a real support in the application. SVS has been reported to work flawlessly on a 2048x768 texture.
+The framebuffer it draws on is developed by Enno Welbers (thanks Enno!). It resides in CPU memory, so maybe it could not be the best solution for heavy video processing: every frame has to be uploaded to the GPU RAM to be published on a syphon server, and this is a (relatively) slow operation. The best would be having native Syphon support in the application you target of course, but if you're here it means you can't go that way.. But still it can be helpful to hijack an application video output that is not Syphon-enabled. SVS has been reported to work flawlessly on a 2048x768 texture.
 
 
 ## Installing
