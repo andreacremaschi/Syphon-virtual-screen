@@ -1,70 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Syphon virtual screen : " />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Syphon virtual screen by andreacremaschi</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Syphon virtual screen</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Syphon virtual screen</h1>
+        <p></p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/andreacremaschi/Syphon-virtual-screen">View on GitHub</a>
+        <p class="view"><a href="https://github.com/andreacremaschi/Syphon-virtual-screen">View the Project on GitHub <small>andreacremaschi/Syphon-virtual-screen</small></a></p>
 
-          <h1 id="project_title">Syphon virtual screen</h1>
-          <h2 id="project_tagline"></h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/andreacremaschi/Syphon-virtual-screen/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/andreacremaschi/Syphon-virtual-screen/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <ul>
+          <li><a href="https://github.com/andreacremaschi/Syphon-virtual-screen/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/andreacremaschi/Syphon-virtual-screen/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/andreacremaschi/Syphon-virtual-screen">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="syphon-virtual-screen" class="anchor" href="#syphon-virtual-screen"><span class="octicon octicon-link"></span></a>Syphon virtual screen</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Add a fake extra-display to your mac and pipe its video content to use in your video workflow.
+<p>Add a fake extra-display to your mac and pipe its video content to use in your video workflow.
 This can be used i.e. to hijack video output of applications that can go full-screen but are not (yet?) Syphon-enabled. </p>
 
-<h1>
-<a name="how-does-it-work" class="anchor" href="#how-does-it-work"><span class="octicon octicon-link"></span></a>How does it work?</h1>
+<hr><p><a href="https://github.com/andreacremaschi/Syphon-virtual-screen/releases/download/1.2.3/Syphon.Virtual.Screen.mpkg.zip">DOWNLOAD</a></p>
+
+<hr><h2>
+<a name="how-does-it-work" class="anchor" href="#how-does-it-work"><span class="octicon octicon-link"></span></a>How does it work?</h2>
 
 <p>The package installer will install EWProxyFrameBuffer, that is a video driver for a fake display (in fact a RAM buffer). The client application (Syphon Virtual Screen) allows you to activate / deactivate the driver, choose the resolution, enable/disable the Syphon server. If you don't know what Syphon is yet, you should definitely <a href="http://syphon.v002.info">check it out</a>;</p>
 
-<h1>
-<a name="how-does-it-perform" class="anchor" href="#how-does-it-perform"><span class="octicon octicon-link"></span></a>How does it perform?</h1>
+<h2>
+<a name="system-requirements" class="anchor" href="#system-requirements"><span class="octicon octicon-link"></span></a>System Requirements</h2>
+
+<p>You can use Syphon Virtual Screen on any Mac running Mac OS X 10.6 (Snow Leopard) or later.</p>
+
+<h2>
+<a name="how-does-it-perform" class="anchor" href="#how-does-it-perform"><span class="octicon octicon-link"></span></a>How does it perform?</h2>
 
 <p>The short answer is: fast enough to be used in production. 
 But since Syphon framework has been built from the ground up to give the best performance possibile it is worth saying that, since SVS is based on a CPU buffer memory, every frame has to be uploaded to the GPU RAM, which is a (relatively) slow operation. But still it works fairly fast depending on your needs.</p>
 
-<h1>
-<a name="how-much-does-it-cost" class="anchor" href="#how-much-does-it-cost"><span class="octicon octicon-link"></span></a>How much does it cost?</h1>
+<h2>
+<a name="how-much-does-it-cost" class="anchor" href="#how-much-does-it-cost"><span class="octicon octicon-link"></span></a>How much does it cost?</h2>
 
-<p>It is free and <a href="https://github.com/andreacremaschi/Syphon-virtual-screen">open source</a>. If you use SVS in your performance or vj set or whatever else, please <a href="">let me know</a>.</p>
+<p>SVS is free and <a href="https://github.com/andreacremaschi/Syphon-virtual-screen">open source</a>. If you use it in your performance or vj set or whatever else, please <a href="">let me know</a>.</p>
+
+<h2>
+<a name="contact-and-support" class="anchor" href="#contact-and-support"><span class="octicon octicon-link"></span></a>Contact and support</h2>
+
+<p>For any issue or improvement thought please open a ticket on the <a href="https://github.com/andreacremaschi/Syphon-virtual-screen/issues?state=open">Github's issue tracker</a>.</p>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
 
 <p>SVS is based on bangnoise/vade's <a href="http://syphon.v002.info">Syphon</a> framework and Enno Welber's <a href="https://github.com/mkernel/EWProxyFramebuffer">EWProxyFrameBuffer</a> (thanks to all you guys!).</p>
 
-<p><a href="https://github.com/andreacremaschi/Syphon-virtual-screen/releases/download/1.2.3/Syphon.Virtual.Screen.mpkg.zip">Download SVS now</a></p>
-      </section>
-    </div>
+<hr><p><a href="https://github.com/andreacremaschi/Syphon-virtual-screen/releases/download/1.2.3/Syphon.Virtual.Screen.mpkg.zip">DOWNLOAD</a></p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Syphon virtual screen maintained by <a href="https://github.com/andreacremaschi">andreacremaschi</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<hr>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/andreacremaschi">andreacremaschi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
