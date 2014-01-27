@@ -40,7 +40,7 @@
 
 
 @implementation AppDelegate
-@synthesize openGLView;
+
 @synthesize syponStateMenuItem = _syphonStateMenuItem;
 
 @synthesize window = _window;
@@ -81,9 +81,10 @@
 {
     NSMenuItem __unsafe_unretained *menuItem = _driverStateMenuItem;
     NSMenu __unsafe_unretained *menuCopy = menu;
-    EWVirtualScreenController __weak *vsController = virtualScreenController;
+
     [virtualScreenController addObserverForKeyPath:@"isFramebufferActive"
                                               task:^(id obj, NSDictionary *change) {
+                                           EWVirtualScreenController  *vsController = (EWVirtualScreenController*)obj;
                                                   if ([[change objectForKey: @"new"] boolValue])
                                                   {
                                                       menuItem.title = NSLocalizedString(@"Disable virtual screen", @"");
@@ -187,7 +188,7 @@
     {
         if ([preferences boolForKey: @"activateVirtualScreenAtStartup"])
         {
-            int mode = [preferences integerForKey: @"virtualScreenMode"];
+            NSInteger mode = [preferences integerForKey: @"virtualScreenMode"];
             bool result = [virtualScreenController setVirtualScreenEnabledWithMode: mode 
                                                                      waitUntilDone: YES];
             if ([preferences boolForKey: @"activateShyponServerAtStartup"])
@@ -234,15 +235,10 @@
     [self setSyphonServerEnabled: !screenCaptureController.capturing];       
 }
 
-- (IBAction)updateFramebuffer:(id)sender {
-    
-    [virtualScreenController updateFramebuffer];
-    
-}
 
 - (IBAction) changeMode:(id)sender
 {
-    int newMode = [sender tag];
+    NSInteger newMode = [sender tag];
 
     // if running, stop the syphon server
     bool capturing = screenCaptureController.capturing;

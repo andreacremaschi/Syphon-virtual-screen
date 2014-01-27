@@ -42,8 +42,8 @@ typedef void(^completionBlock)(void);
 
 - (BOOL) setupConnection;
 - (void) setVirtualScreenEnabled: (BOOL) enable;
-- (bool) setVirtualScreenEnabledWithMode: (int) mode waitUntilDone: (BOOL) waitUntilDone;
-- (void) switchToMode: (int) mode;
+- (bool) setVirtualScreenEnabledWithMode: (NSInteger) mode waitUntilDone: (BOOL) waitUntilDone;
+- (void) switchToMode: (NSInteger) mode;
 - (bool) updateFramebuffer;
 - (EWProxyFramebufferModeInfo*) getCurrentModeInfo;
 

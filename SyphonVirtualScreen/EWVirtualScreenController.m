@@ -199,7 +199,7 @@
 }
 
 
-- (bool) setVirtualScreenEnabledWithMode: (int) mode 
+- (bool) setVirtualScreenEnabledWithMode: (NSInteger) mode
                            waitUntilDone: (BOOL) waitUntilDone
 {
     
@@ -239,7 +239,7 @@
     
 }
 
--(void)switchToMode: (int) mode
+-(void)switchToMode: (NSInteger) mode
 {
     bool curStatus=self.isFramebufferActive;
     if (curStatus)

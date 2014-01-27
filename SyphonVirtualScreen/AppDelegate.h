@@ -47,14 +47,12 @@
 
 // IBOutlet
 @property (unsafe_unretained) IBOutlet NSMenuItem *driverStateMenuItem;
-@property (unsafe_unretained) IBOutlet NSOpenGLView *openGLView;
 @property (unsafe_unretained) IBOutlet NSMenuItem *syponStateMenuItem;
 
 
 //IBActions
 - (IBAction)toggleVirtualScreen:(id)sender;
 - (IBAction)toggleSyphonServer:(id)sender;
-- (IBAction)updateFramebuffer:(id)sender;
 
 @end
 

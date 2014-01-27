@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C75ACE94-4A71-42DC-9A2B-D198D3961664</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SyphonVirtualScreen</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0B22F351-F1EE-4D65-BF4C-EBD1F77BAF5C</key>
+		<string>https://github.com/andreacremaschi/EWProxyFramebuffer.git</string>
+		<key>2E1F129A-B9E6-441C-858F-6C22ED574CFC</key>
+		<string>https://github.com/andreacremaschi/Syphon-virtual-screen.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SyphonVirtualScreen.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0B22F351-F1EE-4D65-BF4C-EBD1F77BAF5C</key>
+		<string>../../EWProxyFramebuffer</string>
+		<key>2E1F129A-B9E6-441C-858F-6C22ED574CFC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/andreacremaschi/Syphon-virtual-screen.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2E1F129A-B9E6-441C-858F-6C22ED574CFC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0B22F351-F1EE-4D65-BF4C-EBD1F77BAF5C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EWProxyFramebuffer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2E1F129A-B9E6-441C-858F-6C22ED574CFC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Source</string>
+		</dict>
+	</array>
+</dict>
+</plist>
