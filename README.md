@@ -27,9 +27,11 @@ The project will compile in two products:
 
 
 
-## Using custom resolutions
+## Advanced tips
 
-To use different resolutions you can just modify the ```EWSyphonProxyFramebuffer/info.plist```.
+    ### Using custom resolutions
+
+To use different resolutions you can just modify the ```EWProxyFramebuffer.kext/Contents/Info.plist```.
 You can do it both before compiling the kext or downloading the binary and editing the kext configuration. Here is how:
 
 
