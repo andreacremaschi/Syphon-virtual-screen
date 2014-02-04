@@ -29,7 +29,7 @@ The project will compile in two products:
 
 ## Advanced tips
 
-    ### Using custom resolutions
+### Using custom resolutions
 
 To use different resolutions you can just modify the ```EWProxyFramebuffer.kext/Contents/Info.plist```.
 You can do it both before compiling the kext or downloading the binary and editing the kext configuration. Here is how:
