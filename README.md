@@ -67,6 +67,8 @@ sudo chmod -R 755 /System/Library/Extensions/EWProxyFramebuffer.kext
 sudo chown -R root:wheel /System/Library/Extensions/EWProxyFramebuffer.kext
 ```
 
-- delete the kext cache (“`rm -R /System/Library/Caches/com.apple.kext.caches/Startup`”);
+- delete the kext cache with the following command:
+
+```sudo rm -R /System/Library/Caches/com.apple.kext.caches/Startup```
 
 - reboot
