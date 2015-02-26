@@ -12,6 +12,10 @@ Based on bangnoise/vade's [Syphon](http://syphon.v002.info) framework and Enno W
 
 As an alternative to compiling from source, you can just download the latest version from the [releases](https://github.com/andreacremaschi/Syphon-virtual-screen/releases/latest/) section of the project. The package installer will install both the kext and the client app. After rebooting you can find Syphon Virtual Screen in /Applications. Automatic launch at login is disabled by default, but you can find an option to enable it in the application's preference panel.
 
+### Homebrew Cask
+     
+      brew cask install syphon-virtual-screen
+     
 
 ### From source
 
