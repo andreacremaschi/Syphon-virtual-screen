@@ -5,6 +5,7 @@ Add a fake extra-display to your mac and pipe its video content to use in your v
 
 Based on bangnoise/vade's [Syphon](http://syphon.v002.info) framework and Enno Welber's [EWProxyFrameBuffer](https://github.com/mkernel/EWProxyFramebuffer).
 
+> NB: as tracked in https://github.com/andreacremaschi/Syphon-virtual-screen/issues/33 SVS suffers low framerate with OSX > 10.10. So, currently Yosemite is not supported. Sorry!
 
 ## Installing
 
