@@ -44,23 +44,54 @@ You can do it both before compiling the kext or downloading the binary and editi
 - type `sudo su`, enter, type your password
 - type `cd /System/Library/Extensions/EWProxyFramebuffer.kext/Contents/`
 - type `nano Info.plist`
-- search this section:
+- find this section:
 
+``` xml
+<key>MaxResolution</key>
+<dict>
+       <key>height</key>
+       <integer>1024</integer>
+       <key>width</key>
+       <integer>1280</integer>
+</dict>
 ```
-    MaxResolution
 
-    height	1024
-    width	1280
+- and replace ```height``` and ```width``` as you need to:
+
+``` xml
+<key>MaxResolution</key>
+<dict>
+       <key>height</key>
+       <integer>1050</integer>
+       <key>width</key>
+       <integer>1680</integer>
+</dict>
 ```
 
-and replace ```height``` and ```width``` as you need to
+- a little above this section you’ll find a list of available resolutions within `dict`, the last one being the highest resolution:
 
-- a little above this section you’ll find a list of available resolutions. Add yours:
-
+``` xml
+<dict>
+     <key>height</key>
+     <integer>1024</integer>
+     <key>name</key>
+     <string>1280x1024</string>
+     <key>width</key>
+     <integer>1280</integer>
+</dict>
 ```
-    height	2048
-    name	2048×768
-    width	768
+
+- add the resolution you need as a new `dict` entry:
+
+``` xml
+<dict>
+     <key>height</key>
+     <integer>1050</integer>
+     <key>name</key>
+     <string>1680x1050</string>
+     <key>width</key>
+     <integer>1680</integer>
+</dict>
 ```
 
 - type “Ctrl+X” to save your editing
@@ -77,3 +108,30 @@ sudo chown -R root:wheel /System/Library/Extensions/EWProxyFramebuffer.kext
 ```sudo rm -R /System/Library/Caches/com.apple.kext.caches/Startup```
 
 - reboot
+- if you are on ***Mavericks or below***, stop here. The Syphon driver will be loaded upon rebooting.
+- if you are on ***Yosemite or above***, press `CMD+R` at the boot time to enter Recovery Mode
+- if your OSX volume is encrypted, first unlock it using Disk Utility
+- run the following command in Terminal (open it from the menu):
+
+```
+nvram boot-args
+```
+
+- if it says `kext-dev-mode=1`, skip this step. If it says “error getting variable”, run the following command:
+
+```
+nvram boot-args=kext-dev-mode=1
+```
+
+- then reboot and enter Recovery Mode again (regardless of whether you have changed the boot arguments in the last step or not)
+- run these commands in Terminal, replacing `[startup_volume]` with the name of your startup volume:
+
+```
+touch /Volumes/[startup_volume]/System/Library/Extensions
+```
+
+```
+kextcache -u /Volumes/[startup_volume]
+```
+
+- this last command may take some time to complete -- up to five or ten minutes in some cases. Be patient while the system rebuilds the kext cache and don't reboot before the job is finished. Once done, reboot the computer. OSX will recognize and load the Syphon driver upon rebooting.
