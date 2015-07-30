@@ -44,23 +44,54 @@ You can do it both before compiling the kext or downloading the binary and editi
 - type `sudo su`, enter, type your password
 - type `cd /System/Library/Extensions/EWProxyFramebuffer.kext/Contents/`
 - type `nano Info.plist`
-- search this section:
+- find this section:
 
+``` xml
+<key>MaxResolution</key>
+<dict>
+       <key>height</key>
+       <integer>1024</integer>
+       <key>width</key>
+       <integer>1280</integer>
+</dict>
 ```
-    MaxResolution
 
-    height	1024
-    width	1280
+- and replace ```height``` and ```width``` as you need to:
+
+``` xml
+<key>MaxResolution</key>
+<dict>
+       <key>height</key>
+       <integer>1050</integer>
+       <key>width</key>
+       <integer>1680</integer>
+</dict>
 ```
 
-and replace ```height``` and ```width``` as you need to
+- a little above this section you’ll find a list of available resolutions within `dict`, the last one being the highest resolution:
 
-- a little above this section you’ll find a list of available resolutions. Add yours:
-
+``` xml
+<dict>
+     <key>height</key>
+     <integer>1024</integer>
+     <key>name</key>
+     <string>1280x1024</string>
+     <key>width</key>
+     <integer>1280</integer>
+</dict>
 ```
-    height	2048
-    name	2048×768
-    width	768
+
+- add the resolution you need as a new `dict` entry:
+
+``` xml
+<dict>
+     <key>height</key>
+     <integer>1050</integer>
+     <key>name</key>
+     <string>1680x1050</string>
+     <key>width</key>
+     <integer>1680</integer>
+</dict>
 ```
 
 - type “Ctrl+X” to save your editing
