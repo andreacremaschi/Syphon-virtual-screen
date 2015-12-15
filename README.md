@@ -13,3 +13,14 @@ The project has been discontinued because of some recent changes in OSX 10.10 an
 Source code is still available for reference on the [development branch](https://github.com/andreacremaschi/Syphon-virtual-screen/tree/develop). 
 
 **If you are working on OSX before Yosemite (10.10)** you can find the installer on the [release page](https://github.com/andreacremaschi/Syphon-virtual-screen/releases).
+
+To uninstall SVS you should:
+
+1. Remove the "startup at login" item for Syphon Virtual Screen and delete the app from `\Applications`.
+2. Open the Terminal and type:
+
+```sh
+sudo rm -rf /System/Library/Extensions/EWProxyFramebuffer.kext
+sudo kextcache -m /System/Library/Caches/com.apple.kext.caches/Startup/Extensions.mkext /System/Library/Extensions
+```
+3. Reboot.
