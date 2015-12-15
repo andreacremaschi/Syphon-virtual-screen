@@ -10,4 +10,6 @@ The project has been discontinued because of some recent changes in OSX 10.10 an
 - low framerate (https://github.com/andreacremaschi/Syphon-virtual-screen/issues/33) 
 - Airplay mirroring broken on 10.9 and greater (https://github.com/andreacremaschi/Syphon-virtual-screen/issues/16)
 
-Source code is still available for reference on the [development branch](https://github.com/andreacremaschi/Syphon-virtual-screen/tree/develop). If you are working on OSX before Yosemite (10.10) you can find the installer can be found on the [release page](https://github.com/andreacremaschi/Syphon-virtual-screen/releases).
+Source code is still available for reference on the [development branch](https://github.com/andreacremaschi/Syphon-virtual-screen/tree/develop). 
+
+**If you are working on OSX before Yosemite (10.10)** you can find the installer on the [release page](https://github.com/andreacremaschi/Syphon-virtual-screen/releases).
